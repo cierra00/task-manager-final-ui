@@ -1,0 +1,62 @@
+<div class="container mt-4">
+ <div class="container mx-auto">
+  <div class="col-6 mx-auto">
+    <h2>Register</h2>
+    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="username">Username</label>
+        <input
+          id="username"
+          type="text"
+          class="form-control"
+          formControlName="username"
+        />
+        <div *ngIf="registerForm.get('username')?.touched && registerForm.get('username')?.invalid">
+          <small class="text-danger" *ngIf="registerForm.get('username')?.errors?.required">
+            Username is required.
+          </small>
+          <small class="text-danger" *ngIf="registerForm.get('username')?.errors?.minlength">
+            Username must be at least 3 characters.
+          </small>
+        </div>
+      </div>
+  
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input
+          id="password"
+          type="password"
+          class="form-control"
+          formControlName="password"
+        />
+        <div *ngIf="registerForm.get('password')?.touched && registerForm.get('password')?.invalid">
+          <small class="text-danger" *ngIf="registerForm.get('password')?.errors?.required">
+            Password is required.
+          </small>
+          <small class="text-danger" *ngIf="registerForm.get('password')?.errors?.minlength">
+            Password must be at least 6 characters.
+          </small>
+        </div>
+      </div>
+  
+      <div class="form-group">
+        <label for="confirmPassword">Confirm Password</label>
+        <input
+          id="confirmPassword"
+          type="password"
+          class="form-control"
+          formControlName="confirmPassword"
+        />
+        <div *ngIf="registerForm.errors?.mismatch && registerForm.get('confirmPassword')?.touched">
+          <small class="text-danger">Passwords do not match.</small>
+        </div>
+      </div>
+  
+      <button type="submit" class="btn btn-primary mt-3" [disabled]="registerForm.invalid">
+        Register
+      </button>
+    </form>
+    <p>have an account? <a routerLink="/login">Login here</a>.</p>
+  </div>
+ </div>
+</div>
