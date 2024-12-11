@@ -1,153 +1,99 @@
-# Task Manager Application
+# Task Management System
 
-This is a full-stack Task Manager application designed to manage tasks efficiently. The application includes a backend server for API endpoints and a frontend client for user interactions.
-
-## Table of Contents
-- [Features](#features)
-- [Technologies Used](#technologies-used)
-- [Getting Started](#getting-started)
-- [Backend Setup](#backend-setup)
-- [Frontend Setup](#frontend-setup)
-- [Usage](#usage)
-- [API Endpoints](#api-endpoints)
-- [Troubleshooting](#troubleshooting)
-
----
+## Overview
+The Task Management System is a full-stack web application developed using the MEAN stack (MongoDB, Express.js, Angular, Node.js). This application provides users with the ability to manage tasks effectively, including features such as user authentication, CRUD operations, and a responsive front-end design.
 
 ## Features
-- User Authentication (Registration & Login)
-- Add, Update, Mark Complete, and Delete Tasks
-- View Task List
-- Responsive Design
 
----
 
-## Technologies Used
-### Backend:
-- Node.js
-- Express
-- MongoDB (Mongoose)
-- bcrypt (for password hashing)
+- **Task Management**:
+  - Add tasks
+  - Edit tasks
+  - Delete tasks
+  - Mark tasks as completed or pending
+- **Responsive Design**: Ensures compatibility with various devices and screen sizes.
+- **Error Handling**: User-friendly error messages for invalid inputs and system failures.
+- **Scalable Architecture**: Built for extensibility and scalability.
 
-### Frontend:
-- Angular
-- Bootstrap
-- RxJS
+## Goals
 
----
+1. Create an efficient and user-friendly task management system.
+2. Showcase full-stack development skills using the MEAN stack.
+3. Implement secure authentication and robust error handling.
+4. Ensure responsiveness and compatibility across different devices.
+5. Adhere to best practices in web application development.
 
-## Getting Started
-Follow these steps to set up and run the Task Manager application.
+## How to Use
 
 ### Prerequisites
-Ensure you have the following installed on your system:
-- Node.js (>= 14.x)
-- npm (Node Package Manager)
-- MongoDB (ensure it is running locally or provide a connection string)
-- Angular CLI
 
----
-
-## Backend Setup
-1. **Navigate to the Backend Directory:**
+1. Install [Node.js](https://nodejs.org/).
+2. Install [MongoDB](https://www.mongodb.com/try/download/community) and ensure the database server is running.
+3. Install Angular CLI globally:
    ```bash
-   cd backend
+   npm install -g @angular/cli
    ```
 
-2. **Install Dependencies:**
+### Setup Instructions
+
+#### Backend Setup
+
+1. Clone the backend repository:
    ```bash
-   npm install
+   git clone https://github.com/cierra00/task-manager-final-api.git
    ```
-
-3. **Create a `.env` File:**
-   Add a `.env` file in the `backend` directory with the following content:
-   ```env
-   PORT=4800
-   MONGO_URI=your_mongo_connection_string
-   ```
-
-4. **Start the Backend Server:**
+2. Navigate to the backend directory:
    ```bash
-   npm start
+   cd task-manager-final-api
    ```
-
-5. **Verify the Server is Running:**
-   Visit `http://localhost:4800` to check if the server is running. Use tools like Postman to test the API endpoints.
-
----
-
-## Frontend Setup
-1. **Navigate to the Frontend Directory:**
-   ```bash
-   cd frontend
-   ```
-
-2. **Install Dependencies:**
+3. Install dependencies:
    ```bash
    npm install
    ```
+4. Start the backend server:
+   ```bash
+   npm run dev
+   ```
 
-3. **Update API URLs:**
-   Ensure the API URLs in the Angular services are pointing to `http://localhost:4800` (or your backend URL).
+#### Frontend Setup
 
-4. **Start the Angular Development Server:**
+1. Clone the frontend repository:
+   ```bash
+   git clone https://github.com/cierra00/task-manager-final-ui.git
+   ```
+2. Navigate to the frontend directory:
+   ```bash
+   cd task-manager-final-ui
+   ```
+3. Install dependencies:
+   ```bash
+   npm install
+   ```
+4. Start the frontend development server:
    ```bash
    ng serve
    ```
+5. Access the application at:
+   ```
+   http://localhost:4200
 
-5. **Access the Application:**
-   Open your browser and go to `http://localhost:4200`.
 
----
+#FYI  
+You will need to create an .env file with a database connection string for Mongo DB. You can find the data model useful in the API models folder. 
+   ```
 
-## Usage
-1. **Register a New User:**
-   Use the "Register" page to create a new account.
+### Usage
 
-2. **Login:**
-   Log in with your username and password.
+1. Register a new account or log in with existing credentials.
+2. Create tasks by providing a title and description.
+3. Edit or delete tasks as needed.
+4. Mark tasks as completed or pending.
 
-3. **Manage Tasks:**
-   - Add new tasks
-   - Mark tasks as complete
-   - Edit tasks
-   - Delete tasks
+## Repository Links
 
----
-
-## API Endpoints
-### Authentication:
-- **POST** `/register` - Register a new user
-- **POST** `/login` - Login with username and password
-
-### Tasks:
-- **GET** `/tasks` - Get all tasks
-- **POST** `/tasks` - Add a new task
-- **PUT** `/tasks/:id` - Update a task
-- **PATCH** `/tasks/:id` - Mark a task as complete
-- **DELETE** `/tasks/:id` - Delete a task
-
----
-
-## Troubleshooting
-- **Backend Server Issues:**
-  - Ensure MongoDB is running.
-  - Check the `.env` file for correct configurations.
-
-- **Frontend Issues:**
-  - Ensure the Angular CLI is installed.
-  - Check the API service URLs.
-
-- **Authentication Issues:**
-  - Ensure bcrypt is installed and working.
-  - Debug JWT token handling.
-
----
-
-## Contributing
-Contributions are welcome! Please fork the repository and create a pull request for any feature additions or bug fixes.
-
----
+- **Frontend Repository**: [task-manager-final-ui](https://github.com/cierra00/task-manager-final-ui.git)
+- **Backend Repository**: [task-manager-final-api](https://github.com/cierra00/task-manager-final-api.git)
 
 ## License
+
 This project is licensed under the MIT License. See the LICENSE file for details.
